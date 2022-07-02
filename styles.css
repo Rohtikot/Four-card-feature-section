@@ -1,0 +1,176 @@
+/* 
+- Mobile: 375px
+- Desktop: 1440px
+
+font-family: 'Poppins', sans-serif;
+
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Font size */
+  font-size: 15px;
+  font-family: 'Poppins', sans-serif;
+
+  /* Primary colors */
+  --clr-primary-red: hsl(0, 78%, 62%);
+  --clr-primary-cyan:hsl(180, 62%, 55%);
+  --clr-primary-orange: hsl(34, 97%, 64%);
+  --clr-primary-blue: hsl(212, 86%, 64%);
+  /* Neutral colors */
+  --clr-netural-darkblue: hsl(234, 12%, 34%);
+  --clr-netural-bluegrey: hsl(229, 6%, 66%);
+  --clr-neutral-lightgrey: hsl(0, 0%, 98%);
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-items:center;
+}
+
+.container {
+  padding: 1rem;
+}
+
+/* Intro/headers */
+.intro {
+  max-width: 600px;
+  text-align: center;
+  margin: 0rem auto 5rem;
+}
+
+.intro h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5em;
+  color:hsl(234, 12%, 34%)
+}
+
+.intro h2 {
+  font-size: 1.8rem;
+  font-weight: 300;
+}
+
+.intro p {
+  font-size: 1.1rem;
+  color:hsl(229, 6%, 66%)
+}
+
+/* Cards */
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  align-items: center;
+  gap: 2rem;
+}
+
+.card {
+  padding: 2rem;
+  height: 252px;
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px 5px lightgrey;
+}
+
+.card p {
+  color:hsl(229, 6%, 66%);
+  margin-top: 0.2rem;
+}
+
+.supervisor {
+  border-top: 4px solid var(--clr-primary-cyan);
+}
+.teambuilder {
+  border-top: 4px solid var(--clr-primary-red);
+}
+.karma {
+  border-top: 4px solid var(--clr-primary-orange);
+}
+.calculator {
+  border-top: 4px solid var(--clr-primary-blue);
+}
+
+
+
+.card img {
+  float: right;
+  margin-top: 3rem;
+}
+
+@media only screen and (min-width: 800px) and (max-width: 1140px){
+  .supervisor {
+    grid-area: a
+  }
+  .teambuilder {
+    grid-area: b
+  }
+  .karma {
+    grid-area: c
+  }
+  .calculator {
+    grid-area: d
+  }
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:  "a b"
+                          "c d";
+  }
+
+  .card {
+    max-width: 495px;
+  }
+}
+
+@media only screen and (min-width: 1140px) {
+  .intro {
+    margin-bottom: 3rem;
+  }
+  
+  .intro h1 {
+    font-size: 2.6rem;
+  }
+
+  .intro h2 {
+    font-size: 2.6rem;
+  }
+
+  .supervisor {
+    grid-area: a
+  }
+  .teambuilder {
+    grid-area: b
+  }
+  .karma {
+    grid-area: c
+  }
+  .calculator {
+    grid-area: d
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas:  ". b ."
+                          "a b d"
+                          "a c d"
+                          ". c .";
+  }
+  
+  .card {
+    max-width: 345px;
+  }
+}
+
+@media only screen and (max-width: 374px) {
+  :root {
+    font-size: 13px;
+  }
+}
